@@ -31,8 +31,8 @@
 }
 
 .isOnline {
- background-color: green;
+  background-color: green;
 }
 .isOffline {
-    background-color: red;
+  background-color: red;
 }
