@@ -1,4 +1,4 @@
-/* .transactionHistory {
+.transactionHistory {
     display: flex;
     flex-direction: column;
 
@@ -20,4 +20,4 @@
 }
 .tableValue {
 
-} */
+}
