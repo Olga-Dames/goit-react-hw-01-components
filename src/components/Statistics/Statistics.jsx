@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import css from './Statistics.module.css';
-import { randomBgColor } from 'components/utils/randomBgColor';
+import { randomBgColor } from 'utils/randomBgColor';
 
 export const Statistics = ({ stats, title }) => {
   return (
@@ -8,14 +8,14 @@ export const Statistics = ({ stats, title }) => {
       {title && <h2 className={css.title}>{title}</h2>}
 
       <ul className={css.statList}>
-        {stats.map(item => (
+        {stats.map(({id,label,percentage}) => (
           <li
             className={css.item}
-            key={item.id}
+            key={id}
             style={{ backgroundColor: randomBgColor() }}
           >
-            <span className={css.label}>{item.label}</span>
-            <span className={css.percentage}>{item.percentage}%</span>
+            <span className={css.label}>{label}</span>
+            <span className={css.percentage}>{percentage}%</span>
           </li>
         ))}
       </ul>
@@ -29,7 +29,7 @@ Statistics.propTypes = {
       id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
       percentage: PropTypes.number.isRequired,
-    })
-  ),
-  title: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
+  title: PropTypes.string,
 };

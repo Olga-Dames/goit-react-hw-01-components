@@ -21,7 +21,9 @@ export const App = () => {
         tag={user.tag}
         location={user.location}
         avatar={user.avatar}
-        stats={user.stats}
+        followers={user.stats.followers}
+        likes={user.stats.likes}
+        views={user.stats.views}
       />
       <Statistics title="Upload stats" stats={data} />
       <FriendList friends={friends} />
